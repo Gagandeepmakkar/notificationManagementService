@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const AWS = require('aws-sdk');
 const User = require('../models/User');
 
-mongoose.connect('mongodb+srv://22gaganld:22gaganld@demo.lgslbjd.mongodb.net/NotificationManagement?retryWrites=true&w=majority&appName=Demo', {
+mongoose.connect(process.env.MONG0DB_URL, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
@@ -17,7 +17,7 @@ AWS.config.update({
 
 const sqs = new AWS.SQS();
 
-const QUEUE_URL = 'https://sqs.eu-north-1.amazonaws.com/851725433792/NotificationService.fifo';
+const QUEUE_URL = process.env.QUEUE_URL;
 class PostController{
 
   async createPost(req, res) {
