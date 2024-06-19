@@ -10,8 +10,8 @@ mongoose.connect('mongodb+srv://22gaganld:22gaganld@demo.lgslbjd.mongodb.net/Not
 
 
 AWS.config.update({
-  accessKeyId: 'AKIA4MTWKXPAB3K55BAK',
-  secretAccessKey: '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',
+  accessKeyId: process.env.AWS_ACCESS_KEY_ID,
+  secretAccessKey: process.env.AWS_SECRET_KEY,
   region: 'us-east-1' 
 });
 
